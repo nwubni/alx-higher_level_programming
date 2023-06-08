@@ -22,14 +22,13 @@ if __name__ == "__main__":
     b = int(sys.argv[3])
     ans = 0
 
-    match op:
-        case '+':
-            ans = add(a, b)
-        case '-':
-            ans = sub(a, b)
-        case '*':
-            ans = mul(a, b)
-        case _:
-            ans = div(a, b)
+    if op == '+':
+        ans = add(a, b)
+    elif op == '-':
+        ans = sub(a, b)
+    elif op == '*':
+        ans = mul(a, b)
+    else:
+        ans = div(a, b)
 
     print("{} {} {} = {}".format(a, op, b, ans))
