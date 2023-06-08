@@ -2,21 +2,23 @@
 
 if __name__ == "__main__":
     import sys
-    from calculator_1 import add, sub, mul, div
 
     argc = len(sys.argv) - 1
     operators = "+-*/"
 
     if argc != 3:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        print("Usage: {} <a> <operator> <b>".format(sys.argv[0]))
         sys.exit(1)
 
-    if not sys.argv[2] in operators:
+    op = sys.argv[2]
+
+    if not (op in operators):
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
 
+    from calculator_1 import add, sub, mul, div
+
     a = int(sys.argv[1])
-    op = sys.argv[2]
     b = int(sys.argv[3])
     ans = 0
 
