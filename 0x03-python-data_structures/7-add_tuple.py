@@ -3,10 +3,10 @@
 def add_tuple(tuple_a=(), tuple_b=()):
     res = [0, 0]
 
-    for i, e in enumerate(tuple_a):
-        res[i] += e
+    for i in range(min(len(tuple_a), 2)):
+        res[i] += tuple_a[i]
 
-    for i, e in enumerate(tuple_b):
-        res[i] += e
+    for i in range(min(len(tuple_b), 2)):
+        res[i] += tuple_b[i]
 
-    return (res[0], res[1])
+    return tuple(res)
