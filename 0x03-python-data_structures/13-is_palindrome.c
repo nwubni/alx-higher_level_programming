@@ -47,7 +47,7 @@ int is_palindrome(listint_t **head)
 		fast = fast->next->next;
 		n++;
 	}
-	
+
 	if (fast)
 		n++;
 
@@ -61,43 +61,10 @@ int is_palindrome(listint_t **head)
 			is_palindrome = 0;
 			break;
 		}
-	
+
 		slow = slow->next;
 		fast = fast->next;
 	}
 
 	return (is_palindrome);
 }
-
-/*int is_palindrome(listint_t **head)
-{
-	int *tmp = NULL, i = 0, j = 0, is_palindrome = 1;
-	listint_t *curr = NULL;
-
-	curr = *head;
-
-	while (curr)
-	{
-		tmp = realloc(tmp, sizeof(int) * (i + 1));
-		tmp[i] = curr->n;
-		i++;
-		curr = curr->next;
-	}
-
-	j = i - 1;
-	i = 0;
-
-	while (i < j)
-	{
-		if (tmp[i] != tmp[j - i])
-		{
-			is_palindrome = 0;
-			break;
-		}
-
-		i++;
-	}
-
-	free(tmp);
-	return (is_palindrome);
-}*/
