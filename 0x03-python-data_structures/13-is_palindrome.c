@@ -71,5 +71,5 @@ int is_palindrome(listint_t **head)
 		second_half = second_half->next;
 	}
 
-	return is_palindrome;
+	return (is_palindrome);
 }
