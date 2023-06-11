@@ -12,28 +12,18 @@ int is_palindrome(listint_t **head)
 	listint_t *curr = NULL;
 
 	curr = *head;
+
 	while (curr)
 	{
+		tmp = realloc(tmp, sizeof(int) * (i + 1));
+		tmp[i] = curr->n;
 		i++;
 		curr = curr->next;
 	}
 
-	tmp = malloc(sizeof(int) * i);
-
-	if (!tmp)
-		return (0);
-
 	j = i - 1;
 	i = 0;
-	curr = *head;
 
-	while (curr)
-	{
-		tmp[i++] = curr->n;
-		curr = curr->next;
-	}
-
-	i = 0;
 	while (i < j)
 	{
 		if (tmp[i] != tmp[j - i])
@@ -41,6 +31,7 @@ int is_palindrome(listint_t **head)
 			is_palindrome = 0;
 			break;
 		}
+
 		i++;
 	}
 
