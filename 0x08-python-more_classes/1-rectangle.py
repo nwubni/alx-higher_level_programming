@@ -4,16 +4,21 @@
 
 
 class Rectangle:
-    """ Definiton of the Rectangle class"""
+    """Rectangle class
+    Attr:
+        width (int): rectangle width
+        height (int): rectangle height
+    """
 
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        """ Instantiats with optional parameter values """
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
         """Retrieves rectangle width"""
-        return self.__width
+        return (self.__width)
 
     @width.setter
     def width(self, value):
@@ -30,7 +35,7 @@ class Rectangle:
     @property
     def height(self):
         """Retrieves rectangle height"""
-        return self.__height
+        return (self.__height)
 
     @height.setter
     def height(self, value):
