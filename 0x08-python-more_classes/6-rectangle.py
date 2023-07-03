@@ -16,9 +16,9 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """ Instantiats with optional parameter values """
 
-        Rectangle.number_of_instances += 1
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     def __del__(self):
         """ Called when object is deleted """
@@ -93,12 +93,3 @@ class Rectangle:
         """ Returns a string representing the class instance """
 
         return (f"Rectangle({self.__width}, {self.__height})")
-
-
-my_rectangle_1 = Rectangle(2, 4)
-my_rectangle_2 = Rectangle(2, 4)
-print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
-del my_rectangle_1
-print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
-del my_rectangle_2
-print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
