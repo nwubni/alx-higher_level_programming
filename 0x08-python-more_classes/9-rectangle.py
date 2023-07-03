@@ -95,11 +95,7 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """ Creates a rectangle of equal sides 
-
-        Attr:
-            size (int): size of the square
-        """
+        """ Creates a rectangle of equal sides """
 
         return (cls(size, size))
 
