@@ -15,10 +15,6 @@ class Rectangle:
         self.width = width
         self.height = height
 
-    def __del__(self):
-        """ Called when object is deleted """
-        print("Bye rectangle...")
-
     @property
     def width(self):
         """Retrieves rectangle width"""
