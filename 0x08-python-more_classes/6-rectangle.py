@@ -6,6 +6,7 @@
 class Rectangle:
     """Rectangle class
     Attr:
+        number_of_instances (int): number of class instance
         width (int): rectangle width
         height (int): rectangle height
     """
@@ -14,12 +15,14 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """ Instantiats with optional parameter values """
+
+        Rectangle.number_of_instances += 1
         self.width = width
         self.height = height
-        Rectangle.number_of_instances += 1
 
     def __del__(self):
         """ Called when object is deleted """
+
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
@@ -88,6 +91,7 @@ class Rectangle:
 
     def __repr__(self):
         """ Returns a string representing the class instance """
+
         return (f"Rectangle({self.__width}, {self.__height})")
 
 
