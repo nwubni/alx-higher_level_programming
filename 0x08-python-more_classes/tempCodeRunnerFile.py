@@ -1,3 +1,4 @@
+my_rectangle_3 = Rectangle(7, 3)
+print(my_rectangle_3)
 
-# print(new_rectangle is my_rectangle)
-# print(type(new_rectangle) is type(my_rectangle))
+print("--")
