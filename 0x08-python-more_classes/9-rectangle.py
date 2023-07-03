@@ -95,8 +95,11 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """ Creates a rectangle of equal sides """
-        return Rectangle(size, size)
+        """ Creates a rectangle of equal sides 
+        Args:
+            size (int): the size of the square"""
+
+        return (cls(size, size))
 
     def __str__(self):
         """ Returns a string print of rectangle """
@@ -120,8 +123,3 @@ class Rectangle:
         """ Returns a string representing the class instance """
 
         return (f"Rectangle({self.__width}, {self.__height})")
-
-
-my_square = Rectangle.square(5)
-print("Area: {} - Perimeter: {}".format(my_square.area(), my_square.perimeter()))
-print(my_square)
