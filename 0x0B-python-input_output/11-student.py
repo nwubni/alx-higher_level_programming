@@ -14,10 +14,10 @@ class Student:
 
     def to_json(self, attrs=None):
         """Returns dictionary description of object"""
-        if attrs is None:
-            return self.__dict__
+        if (type(attrs) == list and all(isinstance(item, (str)) for item in attrs)):
+            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
 
-        return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
+        return self.__dict__
 
     def reload_from_json(self, json):
         """Reloads from json"""
