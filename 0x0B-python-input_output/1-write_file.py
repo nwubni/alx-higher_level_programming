@@ -4,8 +4,11 @@
 
 
 def write_file(filename="", text=""):
-    """Writes text into filename"""
-    with open(filename, "w") as f:
-        f.write(text)
+    """Writes text into filename
+        Args:
+            filename: Filename
+            text: Text content to write to file
+    """
 
-    f.close()
+    with open(filename, "w", encoding="utf-8") as f:
+        return f.write(text)
