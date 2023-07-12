@@ -1,0 +1,48 @@
+# Load the class
+>>> MyList = __import__("1-my_list").MyList
+
+# Test unsorted list elements
+>>> my_list = MyList()
+>>> my_list.append(2)
+>>> my_list.append(4)
+>>> my_list.append(1)
+>>> my_list.append(5)
+>>> my_list.append(3)
+>>> print(my_list)
+[2, 4, 1, 5, 3]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[2, 4, 1, 5, 3]
+
+# Test for empty list
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+>>> print(my_list)
+[]
+
+# Test for negatives list elements
+>>> my_list = MyList()
+>>> my_list.append(-80)
+>>> my_list.append(-10)
+>>> my_list.append(-8)
+>>> print(my_list)
+[-80, -10, -8]
+>>> my_list.print_sorted()
+[-8, -10, -80]
+>>> print(my_list)
+[-80, -10, -8]
+
+# Test for duplicate list elements
+>>> my_list = MyList()
+>>> my_list.append(33)
+>>> my_list.append(33)
+>>> print(my_list)
+[33, 33]
+>>> my_list.print_sorted()
+[33, 33]
+>>> print(my_list)
+[33, 33]
