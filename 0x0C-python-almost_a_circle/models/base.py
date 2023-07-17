@@ -11,6 +11,10 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Class initinalizer
+            Args:
+                id: Class id parameter
+        """
 
         if id != None:
             self.id = id
