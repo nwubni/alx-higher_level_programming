@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """Square Class"""
 
 from .rectangle import Rectangle
