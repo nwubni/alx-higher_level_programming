@@ -15,7 +15,7 @@ class Square(Rectangle):
                 y: Y coordinate of square
                 id: id parameter
         """
-
+        self.size = size
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -44,6 +44,7 @@ class Square(Rectangle):
         if value <= 0:
             raise ValueError("size must be > 0")
 
+        self.size = value
         self._Rectangle__width = value
         self._Rectangle__height = value
 
