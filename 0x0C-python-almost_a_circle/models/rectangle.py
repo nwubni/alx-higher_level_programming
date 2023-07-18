@@ -49,7 +49,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Sets rectangle height
-            Args: 
+            Args:
                 value: Value to set height
         """
 
