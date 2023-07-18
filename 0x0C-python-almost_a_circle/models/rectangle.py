@@ -127,7 +127,7 @@ class Rectangle(Base):
         """
         args_len = len(args)
 
-        if args != None and args_len > 0:
+        if args is not None and args_len > 0:
             if args_len > 0:
                 if args_len >= 1:
                     self.id = args[0]
