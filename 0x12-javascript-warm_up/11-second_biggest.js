@@ -9,7 +9,7 @@ else {
     for (let i = 2; i < process.argv.length; i++)
         vec.push(parseInt(process.argv[i]));
 
-    vec = vec.sort();
+    vec.sort((a, b) => a - b);
 
     console.log(vec[vec.length - 2]);
 }
