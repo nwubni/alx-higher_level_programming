@@ -2,23 +2,20 @@
 """
 Gets states entries starting with the letter N
 """
-
-import sys
 import MySQLdb
+import sys
+
 
 if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3])
+    cur = db.cursor()
+    cur.execute("""SELECT * FROM states WHERE name
+                LIKE BINARY 'N%' ORDER BY states.id""")
+    rows = cur.fetchall()
 
-    try:
-        with MySQLdb.connect(user=username, passwd=password, db=database) as conn:
-            with conn.cur() as cur:
-                q = "SELECT id, name FROM states WHERE BINARY name LIKE %s;"
-                cur.execute(q, ("N%",))
-                rows = cur.fetchall()
+    for row in rows:
+        print(row)
 
-                for row in rows:
-                    print(row)
-    except MySQLdb.Error as e:
-        print(f"Error: {e}")
+    cur.close()
+    db.close()
