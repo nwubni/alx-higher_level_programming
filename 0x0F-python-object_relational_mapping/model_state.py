@@ -9,7 +9,8 @@ from sqlalchemy import create_engine
 
 if __name__ == "__main__":
     username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
-    connection_string = f'mysql+mysqldb://{username}:{password}@localhost/{database}'
+    connection_string = 'mysql+mysqldb://{}:{}@localhost/{}'.format(
+        username, password, database)
 
     engine = create_engine(connection_string, pool_pre_ping=True)
     Base.metadata.create_all(engine)
